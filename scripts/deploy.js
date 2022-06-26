@@ -25,6 +25,9 @@ async function main() {
   const Token = await hre.ethers.getContractFactory("Token");
   const token = await Token.deploy();
 
+  const MWToken = await hre.ethers.getContractFactory("MWToken");
+  const mwToken = await MWToken.deploy("Mike Wu Token", "MWT");
+
   await greeter.deployed();
   await token.deployed();
 
